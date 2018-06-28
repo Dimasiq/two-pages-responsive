@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: absolute; }
+
+header {
+  height: 66%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #000000;
+  padding-bottom: 39px; }
+
+.main {
+  height: 34%;
+  padding-top: 34px;
+  padding-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+  .main .menu a {
+    margin-right: 36px;
+    color: #000000;
+    font-family: "EB Garamond", serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none; }
+    .main .menu a:last-child {
+      margin-right: 0; }
+    .main .menu a:hover {
+      text-decoration: underline; }
+  .main .footer {
+    text-transform: uppercase;
+    color: #949494;
+    font-family: "EB Garamond", serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.1px; }
+    .main .footer a {
+      color: #949494;
+      letter-spacing: 1.1px; }
+      .main .footer a:hover {
+        text-decoration: none; }
+
+@media screen and (max-width: 1023px) {
+  body {
+    width: 1024px;
+    overflow-x: scroll; } }
+@media screen and (max-height: 599px) {
+  body {
+    height: 600px;
+    overflow-y: scroll; } }
+
+/*# sourceMappingURL=style.css.map */

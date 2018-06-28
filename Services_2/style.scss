@@ -1,0 +1,297 @@
+body{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #000 url(img/layer-15.png) 10% 30% no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+header{
+  padding-top: 88px;
+  padding-left: 36px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 62px;
+  .logo{
+    margin-right: 84px;
+  }
+  .menu-toggle{
+    display: none;
+  }
+  .menu{
+    display: flex;
+    .menu-item{
+      position: relative;
+      padding: 5px;
+      margin-right: 25px;
+      text-decoration: none;
+      color: #949494;
+      font-family: "EB Garamond", serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.04px;
+      transition: 0.3s;
+      &:hover{
+        color: #fff;
+      }
+      &::before{
+        position: absolute;
+        top: -10px;
+        width: 100%;
+        left: 0;
+        opacity: 0;
+        height: 2px;
+        background: #fff;
+        content: '';
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+      &::after{
+        position: absolute;
+        bottom: -10px;
+        width: 100%;
+        left: 0;
+        opacity: 0;
+        height: 2px;
+        background: #fff;
+        content: '';
+        transition: opacity 0.3s, transform 0.3s;
+      }
+      &:hover::before{
+        opacity: 1;
+        transform: translateY(10px);
+      }
+      &:hover::after{
+        opacity: 1;
+        transform: translateY(-10px);
+      }
+    }
+  }
+}
+.accordion{
+  padding-left: 54px;
+  .accordion-title{
+    display: inline-block;
+    margin-bottom: 30px;
+    h3{
+      margin: 0;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: "EB Garamond", serif;
+      font-style: italic;
+      font-size: 24px;
+      font-weight: 400;
+          &::before{
+        content: '+';
+        margin-right: 10px;
+        text-align: center;
+        line-height: 14px;
+        font-size: 14px;
+        display: inline-block;
+        color: #000;
+        background-color: #fff;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+      }
+        &:hover{
+          font-size: 24px;
+          font-weight: 700;
+          font-style: normal;
+          font-variant: small-caps;
+        }
+      }
+    }
+  .accordion-title.active{
+    margin-top: 5px;
+    margin-bottom: 29px;
+    h3{
+      font-size: 24px;
+      font-weight: 700;
+      font-style: normal;
+      font-variant: small-caps;
+      &::before{
+        content: "-";
+        line-height: 13px;
+      }
+    }
+    +.accordion-content{
+    display: block;
+    margin-bottom: 20px;
+      p{
+        margin-top: 0;
+      }
+    }
+  }
+    .accordion-content{
+      display: none;
+      padding-left: 30px;
+      margin: 0;
+      width: 60%;
+      color: #ffffff;
+      font-family: "EB Garamond", serif;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 26px;
+      text-transform: uppercase;
+      letter-spacing: 0.88px;
+    }
+}
+.footer{
+  margin-top: auto;
+  padding-left: 36px;
+  padding-bottom: 26px;
+  color: #949494;
+  font-family: "EB Garamond", serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  a{
+    color: #949494;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 834px){
+  header{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 0;
+    .logo{
+      padding: 0;
+      margin: auto;
+      margin-bottom: 25px;
+    }
+    .menu-toggle{
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      font-family: "EB Garamond", serif;
+      font-size: 25px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: 0.3s;
+      &:hover{
+        color: #949494;
+      }
+    }
+    .menu{
+      display: none;
+      padding: 0;
+      margin-top: 25px;
+      .menu-item{
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        font-size: 30px;
+        &::before{
+          display: none;
+        }
+        &::after{
+          display: none;
+        }
+        &:hover{
+        color: #fff;
+        }
+      }
+    }
+  }
+  .accordion{
+    padding: 0;
+    margin-bottom: 30px;
+    width: 100%;
+      .accordion-title{
+        display: block;
+        padding: 10px 30px;
+        margin-bottom: 0;
+        transition: 0.5s;
+        h3{
+          margin: 0;
+          cursor: pointer;
+          color: #ffffff;
+          font-family: "EB Garamond", serif;
+          font-style: normal;
+          text-transform: uppercase;
+          font-size: 25px;
+          font-weight: 400;
+          &::before{
+            content: '+';
+            margin-right: 10px;
+            text-align: center;
+            line-height: 18px;
+            font-size: 18px;
+            display: inline-block;
+            color: #000;
+            background-color: #fff;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+          }
+        }
+      &:hover{
+        background-color: rgba(0, 0, 0, 0.75);
+        
+        h3{
+          font-size: 25px;
+          font-weight: 700;
+          font-style: normal;
+          font-variant: small-caps;
+        }
+      }
+    }
+    .accordion-title.active{
+      margin-bottom: 15px;
+      h3{
+        font-size: 25px;
+        font-weight: 700;
+        font-style: normal;
+        font-variant: small-caps;
+        &::before{
+          content: "-";
+          line-height: 16px;
+      }
+    }
+    +.accordion-content{
+        display: block;
+        margin-bottom: 0;
+        p{
+          margin-top: 0;
+        }
+      }
+    }
+    .accordion-content{
+      width: auto;
+      padding: 0 30px;
+      display: none;
+      margin: 0;
+      color: #ffffff;
+      font-family: "EB Garamond", serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      text-transform: uppercase;
+      letter-spacing: 0.88px;
+    }
+  }
+  .footer{
+    padding-left: 0;
+    text-align: center;
+    color: #949494;
+    font-family: "EB Garamond", serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    a{
+      color: #949494;
+      &:hover{
+        text-decoration: none;
+    }
+  }
+}
+
+}
